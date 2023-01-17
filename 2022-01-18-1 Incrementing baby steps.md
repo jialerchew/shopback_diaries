@@ -52,4 +52,3 @@ You might be thinking: How can others still read from this table when it has rec
 ### Bonus time
 
 A table never truly "deletes" a record. When we update/delete a row, what's happening backend is actually inserting new records into this table, then "switch off" the outdated/deleted rows. Hence, until the upsert statement is commited, all queries will still read from the old version of the table.
-

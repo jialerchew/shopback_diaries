@@ -25,4 +25,15 @@ I guess some of it are quite aligned with what I'm doing currently?
 
 After going through the onboarding, it was time to get familiarized with dbt and Airflow. Surprisingly, my past experience with running stuff on cron really helped me out here (of course, also all the available documentations that the team prepared).
 
-## First big task
+Also took me a while to refresh my memory on Git, lol. Haven't used it since I left Wooppy around 4-5 years ago. Was quite surprised that not many people can use Git CI too. Most just used the PyCharm plugin.
+
+## Beginner quest
+
+My first big task was to migrate a currency rate table from "full refresh" mode to "incremental" mode. "Full refresh" means that everytime the table is refreshed, the entire table is dropped and rebuilt; on the contrary, "incremental" means update+insert according to a "unique key". For this currency rate table, the unique key would be "Date + Currency". The end goal is: When the table refreshes with new data, if a currency for a date already exists in the table, update it, otherwise insert this new record.
+
+This was a really good task for me to get used to:
+* creating new models on dbt
+* learning about jinja scripting on dbt (thank God I used it back then in Wooppy for HTML templating)
+* scheduling automated tasks on airflow
+* writing dbt tests
+* git commands

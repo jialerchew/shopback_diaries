@@ -1,6 +1,6 @@
 # Introduction
 
-At the time of writing this, I have already been in SB for around half a year. I joined at July 2022. I still remember feeling really proud having able to join a tech company. I also had a severe Imposter Syndrome, feeling that I only got this job because of my friend's hardsell to the Data Analyst team lead. I actually failed the interview twice, lol.
+At the time of writing this, I have already been in SB for around half a year. I joined at July 2022. I still remember feeling really proud having able to join a tech company. I also had a severe Imposter Syndrome, feeling that I only got this job because my friend's hard-sell-ed me to the Data Analyst team lead. I actually failed the interview twice, lol.
 
 Watching a lot of tutorial videos on tools that I always wanted to learn, but didn't had a chance, didn't help in building my confidence either. I've always heard friends around me, who are in "proper" Data teams speaking of tools like Airflow, Dbt, BentoML, FastAPI, K8S, Docker, etc. No matter how much tutorial videos I chug, I never had the confidence that I "grasped" these tools.
 

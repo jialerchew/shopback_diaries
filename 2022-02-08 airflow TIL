@@ -1,0 +1,5 @@
+A discussion happened on:
+* how to run airflow task only once
+* how to run task under certains conditions, eg: every second saturday of the month, only during 2nd dag run of the day, etc.
+
+https://medium.com/@plieningerweb/use-apache-airflow-to-run-task-exactly-once-6fb70ca5e7ec

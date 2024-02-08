@@ -4,6 +4,26 @@ A discussion happened on:
 
 https://medium.com/@plieningerweb/use-apache-airflow-to-run-task-exactly-once-6fb70ca5e7ec
 
-self note:
-ai transactions
-int cashbacks
+-------------------
+
+Revisiting this exactly 1 year later on 20240208. The habit didn't last lmao.
+
+Anyways, since I recently did something on running airflow, might as well write it down here.
+
+Airflow has a few very useful features:
+
+1. Serialized DAG
+This is the "compiled" version of the PY DAG scripts. It is in JSON format and we can extract DAG info easily. Currently I am using it to collect all the dbt jobs and models running on airflow.
+https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/dag-serialization.html
+
+2. "Special" operators
+Personally I have used 2 of such operators: `ShortCircuitOperator` and `BranchPythonOperator`. Both of them share a common feature where you can customize your DAG flow via Python functions. If you dont know about this, go read up on them.
+
+3. Trigger rule
+Different conditions that decides if the downstream should start running. The most common idea we have is "if all upstream completes successfully, begin downstream" - this is one of the rules called "All Success". There's alot other very funky rules.
+
+4. "Context" variable
+A "task run" is the small unit of operation in Airflow. In the DAG defining these tasks, we might wanna write functions like "if this is the last day of the month, run an extra task to snapshot Table X". How do we write our DAG script such that it knows how to grab the "Context" of the DAG/Task run? - such as "task name", "DAG id", "execution date", etc
+- "context" can only be referenced as a variable passed into operators. I dont have details on how it works either.
+https://airflow.apache.org/docs/apache-airflow/stable/templates-ref.html
+https://docs.astronomer.io/learn/airflow-context

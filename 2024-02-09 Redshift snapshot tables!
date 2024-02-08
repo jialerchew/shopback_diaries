@@ -1,0 +1,8 @@
+We often have the need to create "snapshot" tables routinely for all sorts of reason - backup, audit, incident management, etc.
+
+ShopBack had a "spring cleaning" session (cost-cutting) because table storage in Redshift costs $$$. I was quite surprised that we were paying 4 figures a month just to maintain a bunch of snapshot tables.
+
+- some snapshot tables for auditing can't be helped. They are compulsory.
+- for the rest, depending on use case, we can recover the tables from cluster snapshots!
+https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html#working-with-snapshot-restore-table-from-snapshot
+- we can actually store up to 35 days worth of cluster snapshots.

@@ -1,0 +1,6 @@
+Self reminder: When designing high-level model pipelines + dbt model structuring, keep in mind of how to deprecate models as well:
+1. static tables - models that are no longer updated, yet still necessary for pipelines (eg: union old data, left join to get more attribution, etc)
+2. KIV? - keep the script as backup, and do not delete the physical table yet.
+3. Total removal - we can delete the physical table as well.
+
+With these things structured nicely, we can write macros to drop tables programatically.
